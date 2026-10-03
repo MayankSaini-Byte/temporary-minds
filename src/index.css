@@ -4342,3 +4342,1031 @@ border: 1px solid rgba(255, 255, 255, 0.1);
 .blitz-term-output.error {
   color: #f87171;
 }
+
+/* ==========================================================================
+   BUILD IN PUBLIC STYLES
+   ========================================================================== */
+
+.bip-page {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+.bip-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* HERO */
+.bip-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.bip-hero-top {
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.bip-pill-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.bip-hero-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.bip-hero-desc {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* SEARCH & FILTERS */
+.bip-search-filter-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bip-search-bar {
+  position: relative;
+  width: 100%;
+}
+
+.bip-search-bar .search-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+}
+
+.bip-search-bar input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 1.2rem 3rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.bip-search-bar input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.bip-search-bar .clear-search {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.bip-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bip-filter-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.bip-filter-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bip-filter-pill {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bip-filter-pill:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.bip-filter-pill.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* PROJECTS GRID */
+.bip-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.bip-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.bip-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.bip-card-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.bip-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bip-card:hover .bip-card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.bip-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--surface) 0%, transparent 100%);
+}
+
+.bip-card-no-img {
+  height: 120px;
+  background: linear-gradient(45deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.bip-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.bip-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.bip-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bip-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.bip-card-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.bip-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.bip-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bip-link:hover {
+  color: #fff;
+}
+
+/* BUTTONS */
+.bip-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.bip-btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+.bip-btn-primary:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.bip-btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bip-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bip-btn-full {
+  width: 100%;
+}
+
+.bip-btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bip-btn-sm:hover, .bip-btn-sm.active {
+  background: rgba(255,255,255,0.15);
+}
+.bip-btn-sm.success.active {
+  background: rgba(52, 211, 153, 0.2);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.5);
+}
+.bip-btn-sm.danger.active {
+  background: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+.bip-icon-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bip-icon-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+.bip-icon-btn.danger:hover {
+  background: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+/* BADGES */
+.bip-status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.bip-card-no-img .bip-status-badge {
+  top: 1rem;
+  left: 1rem;
+  right: auto;
+}
+
+.bip-status-active {
+  background: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.2);
+}
+
+.bip-status-seeking {
+  background: rgba(167, 139, 250, 0.1);
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.2);
+}
+
+.bip-status-ideation {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.2);
+}
+
+.bip-status-completed {
+  background: rgba(148, 163, 184, 0.1);
+  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.bip-status-rejected {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.2);
+}
+
+/* MODAL STYLES */
+.bip-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.bip-modal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.bip-modal-body::-webkit-scrollbar, .bip-success-state::-webkit-scrollbar {
+  width: 6px;
+}
+.bip-modal-body::-webkit-scrollbar, .bip-success-state::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bip-modal-body::-webkit-scrollbar, .bip-success-state::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.bip-modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 10;
+}
+
+.bip-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.bip-badge-primary {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.bip-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.bip-modal-close {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: var(--muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bip-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.bip-modal-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bip-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .bip-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bip-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bip-form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.bip-form-group label .req {
+  color: #f87171;
+}
+
+.bip-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bip-input-wrap.textarea-wrap {
+  align-items: flex-start;
+}
+
+.bip-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--muted);
+}
+
+.bip-form-group input,
+.bip-form-group select,
+.bip-form-group textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.bip-form-group input {
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+}
+
+.bip-form-group select {
+  padding: 0.8rem 1rem;
+  appearance: none;
+}
+
+.bip-form-group textarea {
+  padding: 1rem;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.bip-form-group input:focus,
+.bip-form-group select:focus,
+.bip-form-group textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* FILE UPLOADER */
+.bip-file-uploader {
+  position: relative;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.bip-file-uploader:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.bip-file-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bip-file-label {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.bip-file-clear {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 3;
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.bip-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* SUCCESS / ALERT */
+.bip-alert {
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.bip-alert-error {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  color: #f87171;
+}
+
+.bip-success-state {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bip-success-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: #34d399;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.bip-success-details {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  width: 100%;
+}
+
+.bip-instructions-box {
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+.bip-instructions-title {
+  display: block;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 0.3rem;
+}
+
+/* SPINNER */
+.bip-spinner-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bip-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: bipSpin 0.8s linear infinite;
+}
+@keyframes bipSpin { to { transform: rotate(360deg); } }
+
+
+/* ADMIN DASHBOARD */
+.bip-admin-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bip-admin-toggle:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.bip-admin-toggle.active { background: rgba(167, 139, 250, 0.2); color: #a78bfa; border-color: rgba(167, 139, 250, 0.4); }
+
+.bip-admin-dashboard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.bip-admin-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.bip-admin-tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.bip-admin-tab {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  position: relative;
+}
+.bip-admin-tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.bip-admin-tab.active { color: #fff; background: rgba(255,255,255,0.1); }
+.bip-counter-badge {
+  background: #f87171;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  margin-left: 0.5rem;
+  font-weight: 700;
+}
+
+/* TABLES */
+.bip-admin-table-wrap {
+  overflow-x: auto;
+}
+.bip-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.bip-admin-table th, .bip-admin-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.bip-admin-table th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.bip-table-proj-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.bip-table-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.bip-table-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bip-table-select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+.bip-text-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.bip-table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* REQUESTS VIEW */
+.bip-requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+.bip-request-card {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.bip-request-header {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.bip-request-project {
+  font-size: 0.75rem;
+  color: #a78bfa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.bip-request-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+.bip-request-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.bip-request-meta a {
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s;
+}
+.bip-request-meta a:hover { color: #38bdf8; }
+.bip-request-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.bip-request-time {
+  margin-left: auto;
+}
+.bip-request-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.bip-req-field {
+  background: rgba(255,255,255,0.02);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.bip-req-field strong {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.bip-req-field p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.bip-file-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.bip-request-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  align-items: center;
+}
+.bip-small-note { font-size: 0.8rem; color: var(--muted); }
+.bip-status-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* SETTINGS VIEW */
+.bip-settings-card {
+  max-width: 800px;
+}
+.bip-settings-card h2 { margin-bottom: 0.5rem; }
+.bip-settings-card .bip-desc { color: var(--muted); margin-bottom: 2rem; }
+.bip-webhook-form {
+  background: rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.bip-webhook-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.bip-webhook-form .bip-input-wrap {
+  display: flex;
+  gap: 1rem;
+}
+.bip-webhook-form input {
+  flex: 1;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+}
+.bip-success-text {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #34d399;
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+}
+.bip-gas-instructions {
+  background: rgba(255,255,255,0.02);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+.bip-gas-instructions ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+.bip-code-block {
+  background: #0d1117;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow-x: auto;
+  font-size: 0.85rem;
+  color: #c9d1d9;
+  margin-bottom: 1.5rem;
+}
+
+/* NOTIFICATION TOAST */
+.bip-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--surface);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(52, 211, 153, 0.1);
+  padding: 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  z-index: 2000;
+  max-width: 400px;
+}
+.bip-toast-icon { color: #34d399; margin-top: 0.2rem; }
+.bip-toast-content strong { display: block; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.bip-toast-content p { margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+.bip-toast-close { background: none; border: none; color: var(--muted); cursor: pointer; }
+.bip-toast-close:hover { color: #fff; }
+
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+

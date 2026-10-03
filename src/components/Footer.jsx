@@ -61,8 +61,8 @@ export default function Footer() {
           <nav className="footer-nav">
             <Link to="/" className="footer-link cursor-target">Home</Link>
             <Link to="/minds" className="footer-link cursor-target">Our Minds</Link>
-            <Link to="/blitz" className="footer-link cursor-target">Blitz</Link>
             <Link to="/events" className="footer-link cursor-target">Events</Link>
+            <Link to="/build-in-public" className="footer-link cursor-target">Build in Public</Link>
           </nav>
         </div>
 

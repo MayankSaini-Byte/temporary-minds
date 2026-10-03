@@ -16,7 +16,7 @@ export default function Navbar() {
     { to: '/', label: 'Home' },
     { to: '/minds', label: 'Minds' },
     { to: '/events', label: 'Events' },
-    { to: '/blitz', label: 'Blitz' },
+    { to: '/build-in-public', label: 'Build in Public' },
   ]
 
   return (
