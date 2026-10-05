@@ -13,13 +13,14 @@ export default function Minds() {
   useEffect(() => {
     async function fetchMinds() {
       try {
-        const query = `*[_type == "mind"] | order(publishedAt desc) {
+        // Filter out drafts to prevent unpublished or confidential post leaks
+        const query = `*[_type == "mind" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
           _id, title, slug, publishedAt, mainImage,
           "authorName": author->name,
           "categories": categories[]->title
         }`
         const fetchedMinds = await client.fetch(query)
-        setMinds(fetchedMinds)
+        setMinds(fetchedMinds || [])
       } catch (err) {
         console.error("Failed to fetch minds from Sanity:", err)
         setMinds([])

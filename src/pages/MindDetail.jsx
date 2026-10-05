@@ -15,9 +15,20 @@ export default function MindDetail() {
   useEffect(() => {
     async function fetchMind() {
       try {
-        const query = '*[_type == "mind" && slug.current == $slug][0]{ ..., "authorName": author->name }'
+        // Explicitly project safe public fields and exclude drafts to avoid leaking metadata or unreleased content
+        const query = `*[_type == "mind" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
+          _id,
+          title,
+          slug,
+          publishedAt,
+          mainImage,
+          body,
+          notebookUrl,
+          "authorName": author->name,
+          "categories": categories[]->title
+        }`
         const fetchedMind = await client.fetch(query, { slug })
-        setMind(fetchedMind)
+        setMind(fetchedMind || null)
       } catch (err) {
         console.error("Failed to fetch mind from Sanity:", err)
       } finally {

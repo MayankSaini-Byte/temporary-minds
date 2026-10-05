@@ -28,6 +28,17 @@ const loadPyodide = async () => {
   return pyodideInstance;
 };
 
+// Defensive check to avoid javascript: or malformed URLs
+const isSafeUrl = (url) => {
+  if (!url || typeof url !== 'string') return false;
+  try {
+    const parsed = new URL(url, window.location.origin);
+    return parsed.protocol === 'https:' || parsed.protocol === 'http:';
+  } catch {
+    return false;
+  }
+};
+
 const CodeBlock = ({ value }) => {
   const [copied, setCopied] = useState(false);
   const [codeContent, setCodeContent] = useState(value?.code || '');
@@ -402,8 +413,8 @@ export default function MindViewer({ mind, fullWidth = false }) {
             </div>
           </div>
 
-          {/* Notebook badge if exists */}
-          {notebookUrl && badgeConfig && (
+          {/* Notebook badge if exists and points to a safe protocol */}
+          {notebookUrl && isSafeUrl(notebookUrl) && badgeConfig && (
             <div>
               <a 
                 href={notebookUrl} 

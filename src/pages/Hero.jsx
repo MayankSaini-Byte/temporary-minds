@@ -72,7 +72,16 @@ export default function Hero() {
   useEffect(() => {
     async function fetchRecentMinds() {
       try {
-        const query = '*[_type == "mind"] | order(publishedAt desc)[0...8]';
+        // Filter drafts and project only public summary fields to avoid leaking unpublished content or fetching heavy bodies
+        const query = `*[_type == "mind" && !(_id in path("drafts.**"))] | order(publishedAt desc)[0...8] {
+          _id,
+          title,
+          slug,
+          publishedAt,
+          mainImage,
+          "authorName": author->name,
+          "categories": categories[]->title
+        }`;
         let minds = await client.fetch(query);
         if (minds && minds.length === 2) {
           minds = [...minds, ...minds];

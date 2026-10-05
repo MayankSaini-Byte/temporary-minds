@@ -76,14 +76,43 @@ export default function BipAdmin() {
     }
   }, [isAuthenticated])
 
-  const handleAuth = (e) => {
+  async function hashPasscode(str) {
+    try {
+      const encoder = new TextEncoder()
+      const data = encoder.encode(str)
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+      const hashArray = Array.from(new Uint8Array(hashBuffer))
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+    } catch {
+      return ''
+    }
+  }
+
+  const handleAuth = async (e) => {
     e.preventDefault()
-    if (passcode === import.meta.env.VITE_BIP_ADMIN_PASSCODE) {
+    const envHash = import.meta.env.VITE_BIP_ADMIN_PASSCODE_HASH
+    const envPasscode = import.meta.env.VITE_BIP_ADMIN_PASSCODE
+
+    if (!envHash && !envPasscode) {
+      console.warn('[Security] No admin passcode configured. Please set VITE_BIP_ADMIN_PASSCODE_HASH or VITE_BIP_ADMIN_PASSCODE in your environment.')
+      setAuthError(true)
+      return
+    }
+
+    if (envHash) {
+      const inputHash = await hashPasscode(passcode)
+      if (inputHash.toLowerCase() === envHash.toLowerCase()) {
+        setIsAuthenticated(true)
+        setAuthError(false)
+        return
+      }
+    } else if (envPasscode && passcode === envPasscode) {
       setIsAuthenticated(true)
       setAuthError(false)
-    } else {
-      setAuthError(true)
+      return
     }
+
+    setAuthError(true)
   }
 
   const handleDeleteProject = (id, title) => {
